@@ -1,0 +1,5 @@
+- bs that dont't have databases.
+- bs don't use the customer databases.
+- a lot of people keep their data in books, its labour some to captchar and and analyse the data. keeping information in computers have issues of data getting lost.
+
+- 

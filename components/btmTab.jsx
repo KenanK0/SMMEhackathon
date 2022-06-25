@@ -1,4 +1,11 @@
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Platform } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
+
+const iconSize = 30
+const homeIcon = Platform.OS === 'os' ? <Ionicons name="ios-home" size={iconSize} color="black" /> : <Ionicons name="home" size={iconSize} color="black" />
+const peopleIcon = Platform.OS ==='os' ? <Ionicons name="ios-people-sharp" size={iconSize} color="black" /> : <Ionicons name="people-sharp" size={iconSize} color="black" />
+const board = Platform.OS ==='os' ? <Ionicons name="ios-pie-chart" size={iconSize} color="black"   /> : <AntDesign name="piechart" size={iconSize} color="black" />
 
 function MyTabBar({ state, descriptors, navigation }) {
   return (
@@ -11,6 +18,7 @@ function MyTabBar({ state, descriptors, navigation }) {
             : options.title !== undefined
             ? options.title
             : route.name;
+        const icon_= options.tabBarIcon;
 
         const isFocused = state.index === index;
 
@@ -42,8 +50,9 @@ function MyTabBar({ state, descriptors, navigation }) {
             testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            style={{ flex: 1 }}
+            style={{ flex: 1, flexDirection:'column', padding: 5, alignItems:"center", }}
           >
+            <Text > { icon_ } </Text>
             <Text style={{ color: isFocused ? '#673ab7' : '#222' }}>
               {label}
             </Text>

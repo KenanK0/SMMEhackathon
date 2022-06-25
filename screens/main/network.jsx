@@ -22,51 +22,51 @@ import business5 from "../../assets/businesses/business5.jpg";
 import { Card } from "@rneui/themed";
 
 const Network = ({ navigation }) => {
-  const [address, setAddress] = useState("Sandton, Johannesburg");
+  const [address, setAddress] = useState(null);
   Geocode.setApiKey("AIzaSyAoVkDzEvO0dYt364M48LXN_QziRN3-lhQ");
 
   Geocode.setLanguage("en");
   Geocode.setRegion("es");
   Geocode.setLocationType("ROOFTOP");
 
-  const [location, setLocation] = useState("somewhere");
+  const [location, setLocation] = useState(null);
   const [loading, setLoading] = useState(false);
   const [errorMsg, setErrorMsg] = useState(null);
 
   useEffect(() => {
-    // (async () => {
-    //   let { status } = await Location.requestForegroundPermissionsAsync();
-    //   if (status !== "granted") {
-    //     setErrorMsg("Permission to access location was denied");
-    //     return;
-    //   }
-    //   setLoading(true);
-    //   Location.getCurrentPositionAsync({}).then((e) => {
-    //     setLocation(e);
-    //     Geocode.fromLatLng(e.coords.latitude, e.coords.longitude).then(
-    //       (response) => {
-    //         setAddress(response.results[0].formatted_address);
-    //         setLoading(false);
-    //       }
-    //     );
-    //   });
-    // setLocation(userlocation);
-    // setLoading(false);
-    // console.log(location);
-    // Geocode.fromLatLng(
-    //   location.coords.latitude,
-    //   location.coords.longitude
-    // ).then(
-    //   (response) => {
-    //     const address = response.results[0].formatted_address;
-    //     console.log(address);
-    //     setAddress(address);
-    //   },
-    //   (error) => {
-    //     console.error(error);
-    //   }
-    // );
-    // })();
+    (async () => {
+      let { status } = await Location.requestForegroundPermissionsAsync();
+      if (status !== "granted") {
+        setErrorMsg("Permission to access location was denied");
+        return;
+      }
+      setLoading(true);
+      Location.getCurrentPositionAsync({}).then((e) => {
+        setLocation(e);
+        Geocode.fromLatLng(e.coords.latitude, e.coords.longitude).then(
+          (response) => {
+            setAddress(response.results[0].formatted_address);
+            setLoading(false);
+          }
+        );
+      });
+    setLocation(userlocation);
+    setLoading(false);
+    console.log(location);
+    Geocode.fromLatLng(
+      location.coords.latitude,
+      location.coords.longitude
+    ).then(
+      (response) => {
+        const address = response.results[0].formatted_address;
+        console.log(address);
+        setAddress(address);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+    })();
   }, []);
 
   return (

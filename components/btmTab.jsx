@@ -22,7 +22,6 @@ const Board = ({ color }) => {
 
 const IconSelector = ({ route, isFocused }) => {
   const color = isFocused ? "#9A1206" : "#fff";
-  console.log("Route", route.name);
   switch (route.name) {
     case "Home":
       return <HomeIcon color={color} />;
@@ -59,7 +58,6 @@ function MyTabBar({ state, descriptors, navigation }) {
         // TabBarIcon.props.color = "#00ff00";
 
         const isFocused = state.index === index;
-        console.log("Focus", isFocused);
 
         const onPress = () => {
           const event = navigation.emit({

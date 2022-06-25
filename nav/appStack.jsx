@@ -29,17 +29,21 @@ const AppStack = ({ navigation }) => {
     >
       <BottomTab.Screen
         name="Home"
-        // options={{
-        //   tabBarIcon: <HomeIcon color="#ff0000" />,
-        // }}
+        options={{
+          headerShown : false,
+          // tabBarIcon: <HomeIcon color="#ff0000" />,
+        }}
         component={Home}
       />
 
       <BottomTab.Screen
         name="Network"
-        // options={{
-        //   tabBarIcon: <NetworkIcon color="#ff0000" />,
-        // }}
+        options={{
+          headerShown: false,
+          // tabBarIcon: <NetworkIcon color="#ff0000" />,
+        //  title: "",
+         
+        }}
         component={Network}
       />
       <BottomTab.Screen

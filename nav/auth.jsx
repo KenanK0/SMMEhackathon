@@ -234,13 +234,12 @@ function Login({ navigation }) {
           <Pressable
             style={{
               marginTop: 20,
-
               width: "100%",
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
             }}
-            onPress={() => handleSubmit()}
+            onPress={() => navigation.navigate("Register")}
           >
             <Text
               style={{

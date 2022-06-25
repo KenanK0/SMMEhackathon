@@ -124,7 +124,12 @@ const Register = ({ navigation }) => {
             </TouchableOpacity>
           </View>
 
-          <TouchableOpacity style={styles.btn}>
+          <TouchableOpacity
+            onPress={() => {
+              setUser(true);
+            }}
+            style={styles.btn}
+          >
             <Text style={styles.btnText}>Register</Text>
           </TouchableOpacity>
         </View>

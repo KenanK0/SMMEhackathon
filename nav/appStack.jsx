@@ -4,42 +4,53 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../screens/main/home";
 import Dashboard from "../screens/main/dashboard";
 import Network from "../screens/main/network";
+import { Path, Svg } from "react-native-svg";
 // import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import { Ionicons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons';
+import { Ionicons } from "@expo/vector-icons";
+import { AntDesign } from "@expo/vector-icons";
 
-const iconSize = 30
-const homeIcon = Platform.OS === 'os' ? <Ionicons name="ios-home" size={iconSize} color="black" /> : <Ionicons name="home" size={iconSize} color="black" />
-const peopleIcon = Platform.OS ==='os' ? <Ionicons name="ios-people-sharp" size={iconSize} color="black" /> : <Ionicons name="people-sharp" size={iconSize} color="black" />
-const board = Platform.OS ==='os' ? <Ionicons name="ios-pie-chart" size={iconSize} color="black"   /> : <AntDesign name="piechart" size={iconSize} color="black" />
 
-// const HomeStack_ = createNativeStackNavigator(); 
+
+
+// const HomeStack_ = createNativeStackNavigator();
 const BottomTab = createBottomTabNavigator();
 
-
-const AppStack = ({navigation}) => {
-
+const AppStack = ({ navigation }) => {
   return (
-    <BottomTab.Navigator tabBar={(props) => <MyTabBar {...props} /> } >
-      <BottomTab.Screen name="Home"
-        options={{
-          tabBarIcon: homeIcon
-        }} 
-        component={Home} />
+    <BottomTab.Navigator
+      tabBar={(props) => <MyTabBar {...props} />}
+      screenOptions={({ route }) => ({
+        // tabBarIcon: ({focused,color,size}) => {
+        //   console.log("ICON:",color)
+        //   return <NetworkIcon color="#ff0000" />;
+        // },
+      })}
+    >
+      <BottomTab.Screen
+        name="Home"
+        // options={{
+        //   tabBarIcon: <HomeIcon color="#ff0000" />,
+        // }}
+        component={Home}
+      />
 
-      <BottomTab.Screen name="Network" 
-        options={{
-          tabBarIcon: peopleIcon
-        }}
-        component={Network} />
-      <BottomTab.Screen name="Dashboard"
-        options={{
-          tabBarIcon: board
-        }}
-        component={ Dashboard } />
+      <BottomTab.Screen
+        name="Network"
+        // options={{
+        //   tabBarIcon: <NetworkIcon color="#ff0000" />,
+        // }}
+        component={Network}
+      />
+      <BottomTab.Screen
+        name="Dashboard"
+        // options={{
+        //   tabBarIcon: <Board color="#ff0000" />,
+        // }}
+        component={Dashboard}
+      />
     </BottomTab.Navigator>
-  )
-}
+  );
+};
 
 export default AppStack;

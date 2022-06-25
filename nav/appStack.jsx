@@ -18,7 +18,7 @@ const BottomTab = createBottomTabNavigator();
 const HomeStack = ({navigation}) => {
 
   return (
-    <HomeStack_.Navigator screenOptions={{headerShown:false }} >
+    <HomeStack_.Navigator screenOptions={{ }} >
       <HomeStack_.Screen options={{ headerShow:false }}
         name="HomeStack" component={Home} />
 
@@ -30,9 +30,8 @@ const HomeStack = ({navigation}) => {
 
 const AppStack = ({ navigation }) => {
   return (
-    <BottomTab.Navigator
-      tabBar={(props) => <MyTabBar {...props} />}
-      screenOptions={({ route }) => ({})} >
+    <BottomTab.Navigator tabBar={(props) => <MyTabBar {...props} />}
+      screenOptions={{headerShown:false }} >
 
       <BottomTab.Screen name="Home" component={HomeStack} />
       <BottomTab.Screen name="Network" component={Network} />

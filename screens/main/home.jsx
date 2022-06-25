@@ -21,8 +21,15 @@ const Home = ({ navigation }) => {
         </View>
 
 
-        <Text>Sales</Text>
-        <Pressable containerStyle={{ padding: 20 }} onPress={()=>{ navigation.navigate("Homeinfor") }} >
+        
+
+        <Pressable 
+          style={styles.card} 
+          onPress={()=>{navigation.navigate("Homeinfor") }} >
+            
+            <Text style={{paddingHorizontal:10,}} >Sales</Text>
+
+
           <Card.Title>Sales this month</Card.Title>
           <View style={styles.align}>
             <Card.Image style={styles.ChartImg} source={Chart} />
@@ -30,22 +37,26 @@ const Home = ({ navigation }) => {
           <Card.Image style={styles.contentimg} source={ChartContent} />
           <View style={styles.align}>
             <Text>You have made R12 250 this month.</Text>
-            <Text> Top selling dishes : </Text>
+            <Text> Top selling dishes </Text>
             <Text style={{ fontWeight: "bold" }}>
-              {" "}
-              Pap & steak Wors Roll Chakalaka{" "}
+              Pap and steak Wors Roll Chakalaka{" "}
             </Text>
           </View>
         </Pressable>
 
-        <Text>Finance</Text>
-        <Card>
+        
+        <Pressable style={styles.card}  
+          onPress={() => navigation.navigate("Homeinfor") } >
+          <Text style={{paddingHorizontal:10,}} >Finance</Text>
           <Card.Title>Quaterly performance</Card.Title>
-        </Card>
-        <Text>Customer Analytics</Text>
-        <Card>
+        </Pressable>
+
+
+        <Pressable style={styles.card}  
+          onPress={() => navigation.navigate("Homeinfor") } >
+          <Text style={{paddingHorizontal:10,}} >Customer Analytics</Text>
           <Card.Title>Sales this month</Card.Title>
-        </Card>
+        </Pressable>
       </View>
 
 
@@ -58,11 +69,8 @@ export default Home;
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
-    // justifyContent: "center",
-    // alignItems: "center",
-    marginHorizontal: 25,
     paddingVertical: 10,
+    paddingHorizontal: 10,
   },
   title: {
     color: "#1F376A",
@@ -73,12 +81,11 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "space-between",
     alignItems: "flex-end",
-    // backgroundColor:"pink",
+    marginBottom: 20,
   },
-
   avatar: {
-    width: 60,
-    height: 60,
+    width: 50,
+    height: 50,
     alignSelf:"flex-end",
     alignItems:"flex-end",
   },
@@ -95,5 +102,12 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     alignItems: "center",
   },
+  // card
+  card: {
+    backgroundColor: "#fff",
+    borderRadius: 15,
+    marginBottom: 20,
+    elevation: 4,
+  }
 });
 

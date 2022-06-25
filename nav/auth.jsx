@@ -1,7 +1,8 @@
 import React from "react";
-import { Text } from "react-native";
+import { Text, Image } from "react-native";
 import Register from "../screens/auth/register";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import DefaultImage from "./icon.png";
 
 const stack = createNativeStackNavigator();
 

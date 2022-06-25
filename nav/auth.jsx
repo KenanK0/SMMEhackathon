@@ -10,9 +10,16 @@ import {
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { TextInput } from "react-native-paper";
 import ContextProv from "../components/context";
-import { FacebookIcon,AppleIcon,GoogleIcon } from "../components/customSvgIcon";
+import {
+  FacebookIcon,
+  AppleIcon,
+  GoogleIcon,
+} from "../components/customSvgIcon";
+import Register from "../screens/auth/register";
 
 import DefaultImage from "./icon.png";
+
+const stack = createNativeStackNavigator();
 
 const DEFAULT_IMAGE = Image.resolveAssetSource(DefaultImage).uri;
 
@@ -260,7 +267,6 @@ function Login({ navigation }) {
           justifyContent: "space-around",
           flexDirection: "row",
           alignItems: "center",
-
         }}
       >
         <GoogleIcon />
@@ -275,6 +281,7 @@ const LoginAuth = ({ navigation }) => {
     <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Welcome" component={Welcome} />
       <Stack.Screen name="Login" component={Login} />
+      <stack.Screen name="Register" component={Register} />
     </Stack.Navigator>
   );
 };

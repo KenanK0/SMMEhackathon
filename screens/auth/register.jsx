@@ -110,11 +110,6 @@ const Register = ({ navigation }) => {
             onChangeText={(value) => setData({ ...data, bstype: value })}
           />
 
-          {/* <Input placeholder="upload database"
-            rightIcon={{type:"font-awesome", name:"email"}}
-            onAccessibilityTap={ () => Alert.alert("Ola")  }
-          /> */}
-
           <View style={styles.file_}>
             <TouchableOpacity
               style={styles.filebtn}

@@ -1,20 +1,17 @@
 import { Text, SafeAreaView, ScrollView } from "react-native";
-import React from "react";
 
 
+const NetworkInfo = ({navigation}) => {
 
 
-
-const Dashboard = ({navigation}) => {
-
-  return(
+  return (
     <SafeAreaView >
       <ScrollView showsVerticalScrollIndicator={false} nestedScrollEnabled={true} >
-        <Text >Predictive Screen </Text> 
+        <Text >Network Info </Text> 
       </ScrollView>
     </SafeAreaView>
   )
-} 
+}
 
 
-export default Dashboard;
+export default NetworkInfo;

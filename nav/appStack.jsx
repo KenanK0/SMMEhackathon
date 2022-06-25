@@ -10,9 +10,6 @@ import { Path, Svg } from "react-native-svg";
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 
-
-
-
 // const HomeStack_ = createNativeStackNavigator();
 const BottomTab = createBottomTabNavigator();
 
@@ -20,35 +17,11 @@ const AppStack = ({ navigation }) => {
   return (
     <BottomTab.Navigator
       tabBar={(props) => <MyTabBar {...props} />}
-      screenOptions={({ route }) => ({
-        // tabBarIcon: ({focused,color,size}) => {
-        //   console.log("ICON:",color)
-        //   return <NetworkIcon color="#ff0000" />;
-        // },
-      })}
+      screenOptions={({ route }) => ({})}
     >
-      <BottomTab.Screen
-        name="Home"
-        // options={{
-        //   tabBarIcon: <HomeIcon color="#ff0000" />,
-        // }}
-        component={Home}
-      />
-
-      <BottomTab.Screen
-        name="Network"
-        // options={{
-        //   tabBarIcon: <NetworkIcon color="#ff0000" />,
-        // }}
-        component={Network}
-      />
-      <BottomTab.Screen
-        name="Dashboard"
-        // options={{
-        //   tabBarIcon: <Board color="#ff0000" />,
-        // }}
-        component={Dashboard}
-      />
+      <BottomTab.Screen name="Home" component={Home} />
+      <BottomTab.Screen name="Network" component={Network} />
+      <BottomTab.Screen name="Dashboard" component={Dashboard} />
     </BottomTab.Navigator>
   );
 };

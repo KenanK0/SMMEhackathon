@@ -24,10 +24,10 @@ const HomeStack = ({navigation}) => {
       <HomeStack_.Screen options={{ title:"Home", headerShow:false }}
         name="HomeStack" component={Home} />
 
-      <HomeStack_.Screen options={{ headerShow:false }}
+      <HomeStack_.Screen options={{ title : "Full report",headerShow:false }}
         name="Homeinfor" component={HomeInfo} />
 
-      <HomeStack_.Screen options={{ headerShow:false }}
+      <HomeStack_.Screen options={{ title : 'HandyMan services', headerShow:false }}
         name="Networkinfor" component={NetworkInfo} />
 
       <HomeStack_.Screen options={{ headerShow:false }}

@@ -7,6 +7,7 @@ import {
   TextInput,
   Image,
   ScrollView,
+  Pressable,
 } from "react-native";
 import { Entypo } from "@expo/vector-icons";
 import * as Location from "expo-location";
@@ -17,7 +18,7 @@ import business2 from "../../assets/businesses/business21.jpg";
 import business3 from "../../assets/businesses/business3.jpg";
 import business4 from "../../assets/businesses/business4.jpg";
 import business5 from "../../assets/businesses/business5.jpg";
-
+import business6 from "../../assets/businesses/business6.jpg";
 
 import { Card } from "@rneui/themed";
 
@@ -50,22 +51,22 @@ const Network = ({ navigation }) => {
           }
         );
       });
-    setLocation(userlocation);
-    setLoading(false);
-    console.log(location);
-    Geocode.fromLatLng(
-      location.coords.latitude,
-      location.coords.longitude
-    ).then(
-      (response) => {
-        const address = response.results[0].formatted_address;
-        console.log(address);
-        setAddress(address);
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
+      setLocation(userlocation);
+      setLoading(false);
+      console.log(location);
+      Geocode.fromLatLng(
+        location.coords.latitude,
+        location.coords.longitude
+      ).then(
+        (response) => {
+          const address = response.results[0].formatted_address;
+          console.log(address);
+          setAddress(address);
+        },
+        (error) => {
+          console.error(error);
+        }
+      );
     })();
   }, []);
 
@@ -92,42 +93,46 @@ const Network = ({ navigation }) => {
             <FontAwesome name="search" size={24} color="blue" />
           </View>
           <Text style={styles.title}>Nearest</Text>
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            style={{
-              transform: [{ scaleX: -1 }],
-            }}
-          >
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <View style={styles.businessContainer}>
-              <View style={styles.card}>
-                <Image style={styles.img} source={business3} />
-              </View>
-              <View style={styles.card}>
-                <Image style={styles.img} source={business2} />
-              </View>
-              <View style={styles.card}>
-                <Image style={styles.img} source={construction} />
-              </View>
+              <Pressable onPress={() => navigation.navigate("Networkinfor")}>
+                <View style={styles.card}>
+                  <Image style={styles.img} source={business3} />
+                </View>
+              </Pressable>
+
+              <Pressable onPress={() => navigation.navigate("Networkinfor")}>
+                <View style={styles.card}>
+                  <Image style={styles.img} source={business2} />
+                </View>
+              </Pressable>
+
+              <Pressable onPress={() => navigation.navigate("Networkinfor")}>
+                <View style={styles.card}>
+                  <Image style={styles.img} source={construction} />
+                </View>
+              </Pressable>
             </View>
           </ScrollView>
           <Text style={styles.title}>All</Text>
 
-          <ScrollView
-            horizontal
-            showsHorizontalScrollIndicator={false}
-           
-          >
+          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <View style={styles.businessContainer}>
-              <View style={styles.card}>
-                <Image style={styles.img} source={business4} />
-              </View>
-              <View style={styles.card}>
-                <Image style={styles.img} source={business5} />
-              </View>
-              <View style={styles.card}>
-                <Image style={styles.img} source={construction} />
-              </View>
+              <Pressable onPress={() => navigation.navigate("Networkinfor")}>
+                <View style={styles.card}>
+                  <Image style={styles.img} source={business4} />
+                </View>
+              </Pressable>
+              <Pressable onPress={() => navigation.navigate("Networkinfor")}>
+                <View style={styles.card}>
+                  <Image style={styles.img} source={business5} />
+                </View>
+              </Pressable>
+              <Pressable onPress={() => navigation.navigate("Networkinfor")}>
+                <View style={styles.card}>
+                  <Image style={styles.img} source={business6} />
+                </View>
+              </Pressable>
             </View>
           </ScrollView>
         </View>
@@ -144,7 +149,7 @@ const styles = StyleSheet.create({
   // },
   container: {
     flex: 1,
-   
+
     marginHorizontal: 9,
     marginVertical: 65,
   },

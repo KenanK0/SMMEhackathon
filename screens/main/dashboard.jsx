@@ -10,24 +10,26 @@ import React from "react";
 
 const Dashboard = ({ navigation }) => {
   return (
-    <View style={styles.container}>
-      <Image source={require("../../assets/chart1predictive.png")} />
-      <Text
-        style={{
-          padding: 9,
-          backgroundColor: "lightgray",
-          borderRadius: 9,
-          margin: 12,
-        }}
-      >
-        Market Price Prediction
-      </Text>
-      <Image source={require("../../assets/chart2predictive.png")} />
-      <Image
-        style={{ margin: 12 }}
-        source={require("../../assets/chartDual.png")}
-      />
-    </View>
+    <ScrollView>
+      <View style={styles.container}>
+        <Image source={require("../../assets/chart1predictive.png")} />
+        <Text
+          style={{
+            padding: 9,
+            backgroundColor: "lightgray",
+            borderRadius: 9,
+            margin: 12,
+          }}
+        >
+          Market Price Prediction
+        </Text>
+        <Image source={require("../../assets/chart2predictive.png")} />
+        <Image
+          style={{ margin: 12 }}
+          source={require("../../assets/chartDual.png")}
+        />
+      </View>
+    </ScrollView>
   );
 };
 

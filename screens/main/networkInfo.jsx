@@ -22,7 +22,10 @@ const NetworkInfo = ({ navigation }) => {
             source={require("../../assets/businesses/business3.jpg")}
             resizeMethod="auto"
           />
-          <Button title="Contact us" />
+          <Button
+            title="Contact us"
+            onPress={() => navigation.navigate("Chat")}
+          />
           <Text style={styles.text}>
             Handy Man is a private and management owned company with a culture
             of loyalty and service, supported by our highly skilled and
@@ -30,7 +33,9 @@ const NetworkInfo = ({ navigation }) => {
             our clients with a hands-on approach to understanding and meeting
             their needs with superior and sustainable property solutions.
           </Text>
-          <Text style={{ color:'#293462',fontWeight: "bold", fontSize: 25 }}>Our services</Text>
+          <Text style={{ color: "#293462", fontWeight: "bold", fontSize: 25 }}>
+            Our services
+          </Text>
         </View>
         <View style={styles.services}>
           <View style={styles.service}>
@@ -71,7 +76,6 @@ const NetworkInfo = ({ navigation }) => {
               {/* <Text>Kenan K</Text> */}
             </View>
           </View>
-      
         </View>
       </ScrollView>
     </SafeAreaView>

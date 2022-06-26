@@ -118,6 +118,24 @@ const Register = ({ navigation }) => {
               <Text style={styles.btnText}>Upload Database</Text>
             </TouchableOpacity>
           </View>
+          <View style={styles.file_}>
+            <TouchableOpacity
+              style={styles.filebtn}
+              onPress={() => pickDocument()}
+            >
+              <Text style={styles.btnText}>Upload CSV</Text>
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.file_}>
+            <TouchableOpacity
+              style={styles.filebtn}
+              onPress={() => pickDocument()}
+            >
+              <Text style={styles.btnText}>Upload Spreadsheet</Text>
+            </TouchableOpacity>
+          </View>
+
 
           <TouchableOpacity
             onPress={() => {

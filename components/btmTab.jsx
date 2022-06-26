@@ -16,7 +16,7 @@ const Board = ({ color }) => {
   return Platform.OS === "os" ? (
     <Ionicons name="ios-pie-chart" size={iconSize} color={color} />
   ) : (
-    <AntDesign name="piechart" size={iconSize} color={color} />
+    <AntDesign name="barchart" size={iconSize} color={color} />
   );
 };
 
@@ -27,7 +27,7 @@ const IconSelector = ({ route, isFocused }) => {
       return <HomeIcon color={color} />;
     case "Network":
       return <NetworkIcon color={color} />;
-    case "Dashboard":
+    case "Predictions":
       return <Board color={color} />;
     default:
       return null;

@@ -151,12 +151,12 @@ const styles = StyleSheet.create({
     paddingTop: StatusBar.currentHeight,
   },
   header: {
-    // flexDirection: "row",
+    elevation: 15,
     paddingVertical: 20,
     paddingLeft: 10,
     borderBottomLeftRadius: 20,
     borderBottomRightRadius: 20,
-    height: "30%",
+    height: "35%",
     justifyContent: "space-around",
     alignItems: "center",
     backgroundColor: "#1F376A",
@@ -180,12 +180,13 @@ const styles = StyleSheet.create({
   setting: {
     backgroundColor: "#f3f3f3",
     margin: 10,
-    marginBottom: 5,
+    marginBottom: 2,
     borderRadius: 10,
     display: "flex",
     flexDirection: "row",
     alignItems: "center",
     padding: 10,
+    elevation:2
   },
   settingIcon: {
     flex: 2,

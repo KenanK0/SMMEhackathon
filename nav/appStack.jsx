@@ -9,52 +9,69 @@ import NetworkInfo from "../screens/main/networkInfo";
 import { Path, Svg } from "react-native-svg";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
+
 import { Ionicons } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
+import Profile from "../screens/main/profile";
 
 const HomeStack_ = createNativeStackNavigator();
 const DBStack_ = createNativeStackNavigator(); // dashboard
 const BottomTab = createBottomTabNavigator();
 
-
-const HomeStack = ({navigation}) => {
-
+const HomeStack = ({ navigation }) => {
   return (
-    <HomeStack_.Navigator screenOptions={{ }} >
-      <HomeStack_.Screen options={{ title:"Home", headerShow:false }}
-        name="HomeStack" component={Home} />
+    <HomeStack_.Navigator screenOptions={{headerShown:false}}>
+      <HomeStack_.Screen
+        options={{ title: "Home", headerShow: false }}
+        name="HomeStack"
+        component={Home}
+      />
 
-      <HomeStack_.Screen options={{ title : "Full report",headerShow:false }}
-        name="Homeinfor" component={HomeInfo} />
+      <HomeStack_.Screen
+        options={{ title: "Full report", headerShow: false }}
+        name="Homeinfor"
+        component={HomeInfo}
+      />
 
-      <HomeStack_.Screen options={{ title : 'HandyMan services', headerShow:false }}
-        name="Networkinfor" component={NetworkInfo} />
+      <HomeStack_.Screen
+        options={{ title: "HandyMan services", headerShow: false }}
+        name="Networkinfor"
+        component={NetworkInfo}
+      />
 
-      <HomeStack_.Screen options={{ headerShow:false }}
-        name="Dashboard" component={Dashboard} />
+      <HomeStack_.Screen
+        options={{ headerShow: false }}
+        name="Dashboard"
+        component={Dashboard}
+      />
+      <HomeStack_.Screen
+        options={{ headerShow: false }}
+        name="Profile"
+        component={Profile}
+      />
     </HomeStack_.Navigator>
-  )
-}
+  );
+};
 
 // predictive stack - let me handle the routes
-const DBStack = ({navigation}) => {
-
+const DBStack = ({ navigation }) => {
   return (
-    <DBStack_.Navigator screenOptions={{ }} >
-      <DBStack_.Screen options={{ title:"Predictive", headerShow:false }}
-        name="DashboardStack" component={Dashboard} />
-
-      
+    <DBStack_.Navigator screenOptions={{}}>
+      <DBStack_.Screen
+        options={{ title: "Predictive", headerShow: false }}
+        name="DashboardStack"
+        component={Dashboard}
+      />
     </DBStack_.Navigator>
-  )
-}
-
+  );
+};
 
 const AppStack = ({ navigation }) => {
   return (
-    <BottomTab.Navigator tabBar={(props) => <MyTabBar {...props} />}
-      screenOptions={{headerShown:false }} >
-
+    <BottomTab.Navigator
+      tabBar={(props) => <MyTabBar {...props} />}
+      screenOptions={{ headerShown: false }}
+    >
       <BottomTab.Screen name="Home" component={HomeStack} />
       <BottomTab.Screen name="Network" component={Network} />
       <BottomTab.Screen name="Dashboard" component={DBStack} />
